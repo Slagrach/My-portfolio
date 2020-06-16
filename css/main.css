@@ -994,29 +994,29 @@ em {
     font-weight: 100;
     font-size: .9rem;
 }
-
-/* увеличенная картинка */
+/* 
+/* увеличенная картинка
 #magnify {
     display: none;
-
+/* 
     /* position: absolute; upd: 24.10.2016 */
-    position: fixed;
+    /* position: fixed;
     max-width: 600px;
     height: auto;
     z-index: 9999;
-}
+} */ 
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
 
     #magnify,
     #overlay {
         visibility: hidden;
         display: none;
     }
-}
+} */
 
 /* затемняющий фон */
-#overlay {
+/* #overlay {
     display: none;
 
     background: #000;
@@ -1027,10 +1027,10 @@ em {
     width: 100%;
     opacity: 0.5;
     z-index: 9990;
-}
+} */
 
 /* кнопка закрытия */
-#close-popup {
+/* #close-popup {
     width: 30px;
     height: 30px;
 
@@ -1055,13 +1055,13 @@ em {
     25% {
         transform: rotate(360deg);
     }
-}
+} */
 
-#close-popup:hover {
+/* #close-popup:hover {
     animation: rota 4s infinite normal;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
-}
+} */ 
 
 /*---------- Кнопка на верх ----------*/
 
