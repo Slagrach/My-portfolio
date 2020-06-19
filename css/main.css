@@ -11,6 +11,12 @@
     -webkit-box-sizing: border-box;
 }
 
+.anchor {
+    position: absolute;
+    left: 0;
+    top: -100px;
+}
+
 .wrapper {}
 
 .container {
@@ -29,6 +35,7 @@
     left: 0;
     z-index: 50;
     padding: 10px 0;
+    height: 100px;
 }
 
 .wrapper .header:before {
@@ -164,7 +171,8 @@
     }
 
     .wrapper .header__logo {
-        flex: 0 0 50%;
+        flex: 0 0 60%;
+        margin-top: 5%;
     }
 
     .wrapper .header__body {
@@ -232,7 +240,7 @@
         overflow: auto;
         transition: all 0.7s ease 0s;
         background: rgb(91, 122, 121);
-        padding: 90px 10px 20px 0px;
+        padding: 120px 10px 20px 0px;
     }
 
     .wrapper .header__menu.active {
@@ -315,7 +323,7 @@
 
 
 .wrapper .content {
-    margin-top: 80px;
+    margin-top: 100px;
     width: 100%;
     background: url("../img/header-bg.jpg");
     padding: 10%;
@@ -323,7 +331,7 @@
 
 @media (max-width: 767px) {
     .wrapper .content {
-        margin-top: 50px;
+        padding: 20% 0;
     }
 }
 
@@ -603,6 +611,10 @@
     .aboutme__info__image_iam:hover {
         transform: none;
     }
+
+    .aboutme {
+        padding: 20% 0;
+    }
 }
 
 .aboutme__info_text {
@@ -692,6 +704,7 @@ em {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .skills__item:hover {
@@ -726,6 +739,10 @@ em {
     .skills__item-pic:hover {
         transition: none;
         transform: none;
+    }
+
+    .skills {
+        padding: 20% 0;
     }
 }
 
@@ -821,6 +838,10 @@ em {
         transform: none;
         filter: none;
     }
+
+    .communication {
+        padding: 20% 0;
+    }
 }
 
 /* Сладер */
@@ -856,10 +877,6 @@ em {
 
 .slider__item {
     text-align: center;
-}
-
-.slider__item img {
-    /*    width: 350px;*/
 }
 
 .slick-slide {
@@ -1090,7 +1107,71 @@ em {
     }
 }
 
+/*
 
-.fancybox {
-    width: 500px;
+   Styles for animated modal
+   =========================
+
+*/
+
+/* Start state */
+.animated-modal {
+    display: none;
+    max-width: 550px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    transform: translateY(-50px);
+    transition: all .7s;
+}
+
+.animated-modal h2,
+.animated-modal p {
+    transform: translateY(-50px);
+    opacity: 0;
+    font-family: 'Montserrat', sans-serif;
+
+    transition-property: transform, opacity;
+    transition-duration: .4s;
+}
+
+/* Final state */
+.animated-modal,
+.animated-modal h2,
+.animated-modal p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.animated-modal h2 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Reveal content with different delays */
+.fancybox-slide--current .animated-modal h2 {
+    transition-delay: .1s;
+}
+
+.fancybox-slide--current .animated-modal p {
+    transition-delay: .3s;
+}
+
+.animated-modal a {
+    text-decoration: none;
+}
+
+.animated-modal li {
+    list-style: none;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+.animated-modal ul {
+    padding-top: 10px;
+}
+
+.animated-modal li i {
+    margin-right: 10px;
+    margin-left: 10px
 }

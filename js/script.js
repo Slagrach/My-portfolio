@@ -116,7 +116,7 @@ $(function () {
         return false;
     })
 })
-// медленно к якорям
+//медленно к якорям
 $(document).ready(function () {
     $(".header__menu").on("click", "a", function (event) {
         event.preventDefault();

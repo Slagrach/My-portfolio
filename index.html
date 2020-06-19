@@ -14,6 +14,7 @@
 
     <!-- Подключаем CSS -->
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link href="css/main.css" rel="stylesheet">
     <!-- Ярлык страницы -->
@@ -39,24 +40,27 @@
                         <ul class="header__list">
                             <li><a class="header__link" href="#anchor">Главная</a></li>
                             <li><a class="header__link" href="#anchor_2">Информация</a></li>
-                            <li><a class="header__link" href="#anchor_3">Проекты</a></li>
-                            <li><a class="header__link" href="#anchor_4">Контакты</a></li>
+                            <li><a class="header__link" href="#anchor_3">Навыки</a></li>
+                            <li><a class="header__link" href="#anchor_4">Курсы</a></li>
+                            <li><a class="header__link" href="#anchor_5">Проекты</a></li>
+                            <li><a class="header__link" href="#anchor_6">Контакты</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </header>
         <!-- Верх -->
-        <div class="content" id="anchor_2">
+        <div class="content">
             <div class="container">
                 <div class="content__intro">
+                    <a class="anchor" id="anchor"></a>
                     <div class="content__text">
                         <h1 class="content__intro_title">Привет, меня зовут Вячеслав</h1>
                         <p class="content__intro_info">
                             я занимаюсь созданием сайтов
                         </p>
                         <div class="content__text_btn">
-                            <a href="#" class="content__text__btn_communication">
+                            <a href="#" data-fancybox data-animation-duration="700" data-src="#animatedModal" href="javascript:;" class="content__text__btn_communication">
                                 <span class="content__text__btn__communication_text">связь со мной</span>
                                 <span class="content__text__btn__communication_waves"></span>
                             </a>
@@ -65,8 +69,18 @@
                 </div>
             </div>
         </div>
+        <div id="animatedModal" class="animated-modal">
+            <h2>Привет!</h2>
+            <p>Для связи используйте один из вариантов:</p>
+            <ul>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:slagrach@gmail.com">slagrach@gmail.com</a></li>
+                <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+79776165046">+7 (977) 616-50-46</a></li>
+                <li><i class="fa fa-whatsapp" aria-hidden="true"></i><a href="https://wa.me/79776165046" data-action="share/whatsapp/share">https://wa.me/79776165046</a></li>
+            </ul>
+        </div>
         <!-- Обо мне -->
-        <div class="aboutme" id="anchor">
+        <div class="aboutme">
+            <a class="anchor" id="anchor_2"></a>
             <div class="container">
                 <div class="aboutme__info">
                     <div class="aboutme__info_image">
@@ -84,6 +98,7 @@
         </div>
         <!-- Нвыки -->
         <div class="skills">
+            <a class="anchor" id="anchor_3"></a>
             <div class="container">
                 <div class="skills__body">
                     <div class="skills__title">
@@ -132,7 +147,8 @@
         </div>
 
         <!-- Слайдер -->
-        <div class="slider" id="anchor_3">
+        <div class="slider">
+            <a class="anchor" id="anchor_4"></a>
             <div class="slider__title">
                 Курсы
             </div>
@@ -174,8 +190,9 @@
         </div>
         <!-- Связь -->
         <div class="communication">
+            <a class="anchor" id="anchor_6"></a>
             <div class="container">
-                <div class="communication__box" id="anchor_4">
+                <div class="communication__box">
                     <div class="communication__box_title">
                         <h2 class="communication__box__title_2">
                             Связь со мной
@@ -204,7 +221,7 @@
                         </div>
                         <div class="communication__box__icons_3">
                             <div class="communication__box__icons_image">
-                                <a href="whatsapp://send?text=<?php echo urlencode( '<TEXT>' ); ?>&abid=<?php echo absint( '<slagrach>' ); ?>" data-action="share/whatsapp/share"><svg class="communication__box__icons__image_sprite">
+                                <a href="https://wa.me/79776165046" data-action="share/whatsapp/share"><svg class="communication__box__icons__image_sprite">
                                         <use xlink:href="img/icons/sprite.svg#Watsapp"></use>
                                     </svg></a>
                             </div>
