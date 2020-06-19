@@ -127,3 +127,10 @@ $(document).ready(function () {
         }, 1500);
     });
 });
+
+$("[data-fancybox]").fancybox({
+    infobar: false,
+    arrows: false,
+    toolbar: false,
+    smallBtn: true
+});
