@@ -830,7 +830,7 @@ body {
 
 .slick-arrow.slick-prev {
   left: 0;
-  background: url("img/icons/arrow -left.svg") 0 0/100% no-repeat;
+  background: url("img/icons/arrow-left.svg") 0 0/100% no-repeat;
   opacity: .3;
 }
 
@@ -1163,9 +1163,9 @@ li i {
   }
 }
 @supports (-webkit-appearance:none){
-.intro{background:url("../../img/header-bg.webp")}
-.slick-arrow.slick-prev{background:url("../../img/icons/arrow -left.svg") 0 0/100% no-repeat}
-.slick-arrow.slick-next{background:url("../../img/icons/arrow-right.svg") 0 0/100% no-repeat}
+.intro{background:url("img/header-bg.webp")}
+.slick-arrow.slick-prev{background:url("img/icons/arrow-left.svg") 0 0/100% no-repeat}
+.slick-arrow.slick-next{background:url("img/icons/arrow-right.svg") 0 0/100% no-repeat}
 }
 
  @media (max-width: 1192px){
