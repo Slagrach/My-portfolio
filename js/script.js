@@ -1,26 +1,43 @@
-$(document).ready(function () {
-    // бургер
-    $('.header__burger').click(function (event) {
-        $('.header__burger, .header__menu').toggleClass('active');
+$(function () {
+    /** ************************* <Бургер> ************************* **/
+    $('.header-burger').click(function (event) {
+        $('.header-burger, .header-menu').toggleClass('active');
         $('body').toggleClass('lock');
     })
-    // всплывающая подсказка
-    $(" a").hover(function () {
+    /** ************************* <Tooltip> ************************* **/
+    $("img").hover(function () {
         $(this).next("em").animate({
             opacity: "show",
-            left: "80%"
+            left: "55%"
         }, "slow");
     }, function () {
         $(this).next("em").animate({
             opacity: "hide",
-            left: "-120%"
+            left: "20%"
         }, "slow");
     })
-    // слайдер
-    $('.slider__card').slick({
-        arrows: true, // стрелки вкдючены
+    /** ************************* <Sow scrolling> ************************* **/
+    $(document).ready(function () {
+        $(".header-menu").on("click", "a", function (event) {
+            event.preventDefault();
+            const id = $(this).attr('href'),
+                top = $(id).offset().top;
+            $('body,html').animate({
+                scrollTop: top
+            }, 1500);
+        })
+    })
+    $('#up').click(function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 1000);
+        return false;
+    })
+    /** ************************* <Slider> ************************* **/
+    $('.slider-items').slick({
+        arrows: true, // стрелки включены
         dots: true, // точки включены
-        slidesToShow: 3, // показывать два слайда
+        slidesToShow: 1, // показывать два слайда
         initialSlide: 0, // с какого слайда начинать
         autoplay: true, // автопрокрутка
         autoplaySpeed: 5000, // автопрокрутка каждые 5сек
@@ -61,57 +78,31 @@ $(document).ready(function () {
                 }
             }
         ]
-    });
-});
-// медленно по стрелке
-$(function () {
-    $.fn.scrollToTop = function () {
-        $(this).hide().removeAttr("href");
-        if ($(window).scrollTop() != "0") {
-            $(this).fadeIn("slow")
-        }
-        var scrollDiv = $(this);
-        $(window).scroll(function () {
-            if ($(window).scrollTop() == "0") {
-                $(scrollDiv).fadeOut("slow")
-            } else {
-                $(scrollDiv).fadeIn("slow")
-            }
-        });
-        $(this).click(function () {
-            $("html, body").animate({
-                scrollTop: 0
-            }, "slow")
-        })
-    }
-});
-$(function () {
-    $("#button__up").scrollToTop();
-});
-// медленно наверх
-$(function () {
-    $('#up').click(function () {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 1000);
-        return false;
+    })
+    /** ************************* <Fancybox> ************************* **/
+    $("[data-fancybox]").fancybox({
+        infobar: false,
+        arrows: false,
+        toolbar: false,
+        smallBtn: true
     })
 })
-// медленно к якорям
-$(document).ready(function () {
-    $(".header__menu").on("click", "a", function (event) {
-        event.preventDefault();
-        var id = $(this).attr('href'),
-            top = $(id).offset().top;
-        $('body,html').animate({
-            scrollTop: top
-        }, 1500);
-    });
-});
-// fancyBox
-$("[data-fancybox]").fancybox({
-    infobar: false,
-    arrows: false,
-    toolbar: false,
-    smallBtn: true
+
+/** ************************* <Scrolling menu> ************************* **/
+window.addEventListener('scroll', () => {
+    let scrollDistance = window.scrollY;
+
+    if (window.innerWidth > 768) {
+        document.querySelectorAll('.page').forEach((el, i) => {
+            if (el.offsetTop - document.querySelector('.header').clientHeight <= scrollDistance) {
+                document.querySelectorAll('.header-menu a').forEach((el) => {
+                    if (el.classList.contains('active')) {
+                        el.classList.remove('active');
+                    }
+                });
+
+                document.querySelectorAll('.header-menu li')[i].querySelector('a').classList.add('active');
+            }
+        });
+    }
 });
