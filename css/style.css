@@ -456,7 +456,7 @@ body {
 
 .intro {
   margin: 100px 0 0 0;
-  background: url("../img/header-bg.jpg") 0 0/100% no-repeat;
+  background: url("../img/header-bg.jpg");
 }
 
 .intro-content {
