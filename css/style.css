@@ -456,7 +456,7 @@ body {
 
 .intro {
   margin: 100px 0 0 0;
-  background: url("img/header-bg.webp") 0 0/100% no-repeat;
+  background: url("img/header-bg.jpg") 0 0/100% no-repeat;
 }
 
 .intro-content {
@@ -1163,7 +1163,7 @@ li i {
   }
 }
 @supports (-webkit-appearance:none){
-.intro{background:url("img/header-bg.webp") 0 0/100% no-repeat}
+/* .intro{background:url("img/header-bg.webp") 0 0/100% no-repeat} */
 .slick-arrow.slick-prev{background:url("img/icons/arrow-left.svg") 0 0/100% no-repeat}
 .slick-arrow.slick-next{background:url("img/icons/arrow-right.svg") 0 0/100% no-repeat}
 }
