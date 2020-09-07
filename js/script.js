@@ -3,7 +3,7 @@ $(function () {
     $('.header-burger').click(function (event) {
         $('.header-burger, .header-menu').toggleClass('active');
         $('body').toggleClass('lock');
-    })
+    });
     /** ************************* <Tooltip> ************************* **/
     $("img").hover(function () {
         $(this).next("em").animate({
@@ -15,7 +15,7 @@ $(function () {
             opacity: "hide",
             left: "20%"
         }, "slow");
-    })
+    });
     /** ************************* <Sow scrolling> ************************* **/
     $(document).ready(function () {
         $(".header-menu").on("click", "a", function (event) {
@@ -26,13 +26,13 @@ $(function () {
                 scrollTop: top
             }, 1500);
         })
-    })
+    });
     $('#up').click(function () {
         $('html, body').animate({
             scrollTop: 0
         }, 1000);
         return false;
-    })
+    });
     /** ************************* <Slider> ************************* **/
     $('.slider-items').slick({
         arrows: true, // стрелки включены
@@ -78,7 +78,7 @@ $(function () {
                 }
             }
         ]
-    })
+    });
     /** ************************* <Fancybox> ************************* **/
     $("[data-fancybox]").fancybox({
         infobar: false,
@@ -86,7 +86,7 @@ $(function () {
         toolbar: false,
         smallBtn: true
     })
-})
+});
 
 /** ************************* <Scrolling menu> ************************* **/
 window.addEventListener('scroll', () => {
