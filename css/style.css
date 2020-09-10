@@ -671,9 +671,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  overflow: hidden;
+  
   position: relative;
+  
   padding: 0 35px 200px 35px;
+  
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
