@@ -5,7 +5,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-Black.woff") format("woff"), url("../fonts/Montserrat-Black.woff2") format("woff2");
   font-weight: normal;
-  font-style: normal;
+  font-style: black;
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-Bold.woff") format("woff"), url("../fonts/Montserrat-Bold.woff2") format("woff2");
   font-weight: normal;
-  font-style: normal;
+  font-style: bold;
 }
 
 @font-face {
@@ -21,7 +21,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.woff2") format("woff2");
   font-weight: normal;
-  font-style: normal;
+  font-style: extra-bold;
 }
 
 @font-face {
@@ -29,7 +29,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-Light.woff") format("woff"), url("../fonts/Montserrat-Light.woff2") format("woff2");
   font-weight: normal;
-  font-style: normal;
+  font-style: light;
 }
 
 @font-face {
@@ -37,7 +37,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.woff2") format("woff2");
   font-weight: normal;
-  font-style: normal;
+  font-style: regular;
 }
 
 @font-face {
@@ -45,7 +45,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
   font-weight: normal;
-  font-style: normal;
+  font-style: semi-bold;
 }
 
 /** ************************* <RESET STYLES> ************************* **/
@@ -154,6 +154,7 @@ h6 {
 
 .slick-list.dragging {
   cursor: pointer;
+  cursor: hand;
 }
 
 .slick-slider .slick-track,
@@ -238,7 +239,7 @@ body {
 
 .wrapper {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -294,6 +295,7 @@ body {
 .header-logo {
   position: relative;
   z-index: 3;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .header-logo img {
@@ -378,8 +380,13 @@ body {
   position: relative;
 }
 
+.header-menu__list li {
+  margin: 0;
+}
+
 .header-menu__link {
   position: relative;
+  padding: 0 0 2px 0;
   margin: 0 0 0 20px;
   color: #fafafa;
   text-transform: uppercase;
@@ -407,45 +414,22 @@ body {
   transition: opacity .3s linear;
 }
 
-.header-menu__link:hover,
-.header-menu__link.active {
+.header-menu__link:hover {
   color: gray;
   opacity: .6;
 }
 
-.header-menu__link:hover:after,
-.header-menu__link.active {
+.header-menu__link.active:after {
   opacity: .6;
 }
 
-.active {
-  position: relative;
-  margin: 0 0 0 20px;
-  color: #fafafa;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 14px;
-  letter-spacing: 1px;
-  -webkit-transition: color .3s linear;
-  -o-transition: color .3s linear;
-  transition: color .3s linear;
+/* HEADER-BURGER */
+
+.header-burger {
+  display: none;
 }
 
-.active:after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #4973ff;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1;
-  opacity: 1;
-  -webkit-transition: opacity .3s linear;
-  -o-transition: opacity .3s linear;
-  transition: opacity .3s linear;
-}
+/* @MEDIA */
 
 /*- -------------------- </HEADER-end> -------------------- -*/
 
@@ -681,7 +665,6 @@ body {
 }
 
 .about-text {
-  width: 828px;
   text-align: center;
   font-size: 28px;
   font-weight: 400;
@@ -935,6 +918,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 0 0 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .contact-item__link-icon {
@@ -1032,20 +1016,11 @@ li i {
   }
 }
 
-@media (max-width: 991.98px) {
-  .container {
-    max-width: 750px;
+@media (max-width: 1024px) {
+  .header-logo {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
-}
 
-@media (max-width: 767.98px) {
-  .container {
-    max-width: none;
-    padding: 0 10px;
-  }
-}
-
-@media (max-width: 767px) {
   .header-logo:hover {
     -webkit-transform-origin: top center;
     -ms-transform-origin: top center;
@@ -1058,13 +1033,27 @@ li i {
     animation-fill-mode: none;
   }
 
+  .contact-item {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  .contact-item__link-icon:hover {
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-filter: none;
+    filter: none;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 992px) {
   body.lock {
     overflow: hidden;
   }
 
-  .header {
-    position: fixed;
-    height: 70px;
+  .header-logo {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   .header-logo img {
@@ -1151,6 +1140,19 @@ li i {
     top: 0;
   }
 
+  .header-menu__link {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  .header-menu__link:hover {
+    color: #fafafa;
+    opacity: 1;
+  }
+
+  .header-menu__link:after {
+    content: none;
+  }
+
   .header-menu__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1162,8 +1164,53 @@ li i {
     margin: 0 0 10px 0;
   }
 
-  .active {
-    margin: 0;
+  .about-img em {
+    display: none;
+    visibility: hidden;
+  }
+
+  .skills-items {
+    width: 100%;
+  }
+
+  .contact-item__link-icon:hover {
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-filter: none;
+    filter: none;
+    overflow: hidden;
+  }
+
+  .contact-item__link {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-logo:hover {
+    -webkit-transform-origin: top center;
+    -ms-transform-origin: top center;
+    transform-origin: 0;
+    -webkit-animation-name: swing;
+    animation-name: none;
+    -webkit-animation-duration: 1s;
+    animation-duration: 0s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: none;
   }
 
   .intro {
@@ -1184,7 +1231,6 @@ li i {
   }
 
   .about-text {
-    width: 312px;
     text-align: center;
     font-size: 22px;
     font-weight: 400;
@@ -1258,6 +1304,10 @@ li i {
     overflow: hidden;
   }
 
+  .contact-item__link {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
   .footer-text {
     font-size: 12px;
     padding: 10px 0;
@@ -1288,6 +1338,22 @@ li i {
 }
 
  @media (max-width: 1192px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1024px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 992px){
 
 @supports (-webkit-appearance:none){
 
