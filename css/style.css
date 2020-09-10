@@ -5,7 +5,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-Black.woff") format("woff"), url("../fonts/Montserrat-Black.woff2") format("woff2");
   font-weight: normal;
-  font-style: black;
+  font-style: normal;
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-Bold.woff") format("woff"), url("../fonts/Montserrat-Bold.woff2") format("woff2");
   font-weight: normal;
-  font-style: bold;
+  font-style: normal;
 }
 
 @font-face {
@@ -21,7 +21,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.woff2") format("woff2");
   font-weight: normal;
-  font-style: extra-bold;
+  font-style: normal;
 }
 
 @font-face {
@@ -29,7 +29,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-Light.woff") format("woff"), url("../fonts/Montserrat-Light.woff2") format("woff2");
   font-weight: normal;
-  font-style: light;
+  font-style: normal;
 }
 
 @font-face {
@@ -37,7 +37,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.woff2") format("woff2");
   font-weight: normal;
-  font-style: regular;
+  font-style: normal;
 }
 
 @font-face {
@@ -45,7 +45,7 @@
   font-display: swap;
   src: url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
   font-weight: normal;
-  font-style: semi-bold;
+  font-style: normal;
 }
 
 /** ************************* <RESET STYLES> ************************* **/
@@ -128,7 +128,7 @@ h6 {
 html,
 body {
   font-family: "Montserrat-Regular", sans-serif;
-  height: 100%;
+  height: 100vh;
   min-width: 320px;
 }
 
@@ -636,6 +636,7 @@ body {
 
 .slider-title {
   color: #030404;
+  
   font-weight: 900;
   font-size: 45px;
   text-align: center;
@@ -893,6 +894,28 @@ li {
 
 li i {
   margin: 0 5px 0 0;
+}
+@media (max-width:767px) {
+  .modal-text {
+    margin: 0 0 15px 0;
+  }
+  li {
+    margin: 0 0 25px 0;
+    & i {
+      margin: 0 15px 0 0;
+    }
+  }
+}
+@media (max-width:992px) {
+  .modal-text {
+    margin: 0 0 10px 0;
+  }
+  li {
+    margin: 0 0 20px 0;
+    & i {
+      margin: 0 10px 0 0;
+    }
+  }
 }
 
 /*- -------------------- </MODAL-end> -------------------- -*/
